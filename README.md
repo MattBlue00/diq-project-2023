@@ -21,7 +21,36 @@ The dataset for this year's projects was a fully numeric, randomly generated dat
 
 For this step, we designed pollution functions that would inject non-exact duplicates, and functions that would append new correlated/non-correlated features to all the tuples of the dataset.
 
-> Given the scarse interpretability of our dataset, we designed pollution functions to resemble some possible real-world scenarios.
+> Given the scarce interpretability of our dataset, we designed several pollutions to mimic possible real-world scenarios.
 
-The following is a brief overview of the functions, for a more comprehensive look, please refer to the notebooks.
+The following is a brief overview of the functions, for a more comprehensive look, please refer to the notebooks, and the report.
 
+### Non-Exact Duplicate Issue
+Each of the following functions works on a subset of the dataset: Given a percentage of pollution, they will inject the dataset with the correct number of duplicate data points.
+We implemented the following pollution functions:
+- **Rounding-off**: Duplicates a data point by shaving off a random amount of digits, for a random amount of features.
+- **Gaussian Noise**: Duplicates a data point by adding some Gaussian noise to it.
+- **Scaling**: Duplicates a data point by re-scaling it to a random power of 10, inside a specific interval.
+- **Swapping**: Duplicates a data point by swapping a random amount of features of that same point.
+- **Similarity Pollution**: Duplicates a data point by creating another one with a certain level of similarity.
+
+Each of these was created to mimic possible errors in the insertion, either caused by human insertion (Swapping), or by misconfigurations/miscalibrations/lack of precision of sensors (Rounding-off, Gaussian noise, Scaling, Similarity).
+
+### Variable Types Issue
+For this step, we designed pollution functions that would inject *new features* for each tuple of the dataset. The decision of modifying the full dataset was taken to avoid issues related to missing values in steps 3/5.
+
+Our approach to this issue in this scenario was two-fold, as we tried inserting features that were either uncorrelated, or correlated by complex interactions between other pre-existing features.
+
+We designed the pollution functions and the experiments to try and answer the following questions:
+1. How impactful is feature variety compared to quantity?
+2. Which types of features impact performance the most?
+3. Can adding correlated features help models in learning a more effective representation?
+4. Which models tend to fit noise, and which models can distinguish relevant features from redundant/irrelevant ones?
+
+The pollution functions implemented are:
+- **Boolean Correlated/Non-correlated**
+- **String Correlated/Non-correlated**
+- **Numeric Correlated/Non-correlated**
+- **Date Correlated/Non-correlated**
+
+Each of these injects one new feature of the corresponding type, which is either correlated to the other, pre-existing features, or completely non-correlated.
