@@ -34,7 +34,7 @@ We implemented the following pollution functions:
 - **Swapping**: Duplicates a data point by swapping a random amount of features of that same point.
 - **Similarity Pollution**: Duplicates a data point by creating another one with a certain level of similarity.
 
-Each of these was created to mimic possible errors in the insertion, either caused by human insertion (Swapping), or by misconfigurations/miscalibrations/lack of precision of sensors (Rounding-off, Gaussian noise, Scaling, Similarity).
+Each of these was created to imitate possible errors, either caused by human insertion (Swapping), or by misconfigurations/miscalibrations/lack of precision of sensors (Rounding-off, Gaussian noise, Scaling, Similarity).
 
 ### Variable Types Issue
 For this step, we designed pollution functions that would inject *new features* for each tuple of the dataset. The decision of modifying the full dataset was taken to avoid issues related to missing values in steps 3/5.
