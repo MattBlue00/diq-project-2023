@@ -1,4 +1,7 @@
 # Data and Information Quality Project - AY 2023/2024
+<p align="center">
+	<img src="images/pollutions/pollution_animation.gif" height="350" />
+</p>
 
 The objective of this project was to test the effects of different types of data pollution on the performance of various Machine Learning algorithms.
 
