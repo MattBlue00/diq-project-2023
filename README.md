@@ -86,5 +86,3 @@ This step was tackled using the **recordlinkage** library for non-exact duplicat
 This was tested with various configurations (linear, exp, gauss and squared) and showed an overall good cleaning performance, apart from some pollutions which were practically undetectable without any prior knowledge.
 
 For a more in-depth look at deduplication results, please refer to the report.
-
-This project received an **almost-perfect** grade of 2.5/3, due to the lack of more experiments.
